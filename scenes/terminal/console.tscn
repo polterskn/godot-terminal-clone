@@ -1,0 +1,100 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://media/tres/dyFonts/terminal.tres" type="DynamicFont" id=1]
+[ext_resource path="res://media/tres/stylebox/empty.tres" type="StyleBox" id=2]
+[ext_resource path="res://scripts/terminal/main.gd" type="Script" id=3]
+[ext_resource path="res://media/tscn/CRT.tscn" type="PackedScene" id=4]
+[ext_resource path="res://media/tres/theme/emptyVScrollBar.tres" type="Theme" id=5]
+[ext_resource path="res://scripts/terminal/commands.gd" type="Script" id=6]
+
+[node name="Terminal" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bg" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.054902, 0.054902, 0.054902, 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Console" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="console__log" type="RichTextLabel" parent="Console"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 24.0
+margin_top = 24.0
+margin_right = -24.0
+margin_bottom = -88.0
+theme = ExtResource( 5 )
+custom_styles/focus = ExtResource( 2 )
+custom_styles/normal = ExtResource( 2 )
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Input" type="Control" parent="Console"]
+anchor_top = 0.893
+anchor_right = 1.0
+anchor_bottom = 0.96
+margin_left = 24.0
+margin_top = 0.199951
+margin_right = -24.0
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="console__input" type="LineEdit" parent="Console/Input"]
+anchor_left = 0.025
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -8.4
+margin_right = -24.0
+custom_styles/read_only = ExtResource( 2 )
+custom_styles/focus = ExtResource( 2 )
+custom_styles/normal = ExtResource( 2 )
+custom_fonts/font = ExtResource( 1 )
+max_length = 50
+context_menu_enabled = false
+shortcut_keys_enabled = false
+placeholder_alpha = 0.3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="write__indicator" type="Label" parent="Console/Input"]
+anchor_left = 0.016
+anchor_top = 0.2
+anchor_right = 0.041
+anchor_bottom = 0.8
+margin_left = -15.616
+margin_right = -24.016
+custom_fonts/font = ExtResource( 1 )
+text = ">"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="anim" type="Tween" parent="."]
+
+[node name="commands" type="Node" parent="."]
+script = ExtResource( 6 )
+
+[node name="CRT" parent="." instance=ExtResource( 4 )]
+[connection signal="text_entered" from="Console/Input/console__input" to="." method="_on_console__input_text_entered"]
+[connection signal="tween_completed" from="anim" to="." method="_on_anim_tween_completed"]

@@ -1,0 +1,6 @@
+Welcome back {
+	ERROR: _getUserName(): "${user.name}" is not defined.
+  	At: editor/scene_tree_editor.cpp:768
+	}.
+Type 'help' to see a list of shell available commands and
+retrieve a short description of the commands in question.

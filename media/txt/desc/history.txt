@@ -1,0 +1,10 @@
+----------------------------------------------------------------
+[center]History[/center]
+----------------------------------------------------------------
+This command serves as entry assistance, and allows you to look
+through the list of previous commands.
+----------------------------------------------------------------
+Syntax:					history
+
+Example of use:			history
+----------------------------------------------------------------

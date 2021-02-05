@@ -1,0 +1,12 @@
+----------------------------------------------------------------
+[center]File content[/center]
+----------------------------------------------------------------
+The command line program cat (short for concatenate) was
+developed as a tool for the combination of file content and can
+be used as a pager for the display of file content in the
+terminal.
+----------------------------------------------------------------
+Syntax:					cat [file].txt
+
+Example of use:			cat names.txt
+----------------------------------------------------------------

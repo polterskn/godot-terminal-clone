@@ -1,0 +1,10 @@
+----------------------------------------------------------------
+[center]Working directory[/center]
+----------------------------------------------------------------
+Use pwd (short for print working directory) to output the name
+of the current working directory.
+----------------------------------------------------------------
+Syntax:					pwd
+
+Example of use:			pwd
+----------------------------------------------------------------

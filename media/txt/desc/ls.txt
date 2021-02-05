@@ -1,0 +1,11 @@
+----------------------------------------------------------------
+[center]List content[/center]
+----------------------------------------------------------------
+The command line directive ls stands for list and is used to
+display the content of a directory (the names of all files and
+folders or directories found in the given directory).
+----------------------------------------------------------------
+Syntax:					ls
+
+Example of use:			ls
+----------------------------------------------------------------
