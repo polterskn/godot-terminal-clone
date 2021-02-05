@@ -2,6 +2,7 @@ extends Control
 
 
 const ROOT_DIR = '/home/user'
+const MONTHS = ['', 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 
 onready var consoleLog = $Console/console__log
 onready var consoleInput = $Console/Input/console__input
@@ -52,32 +53,10 @@ func transformDate():
 	var date = OS.get_datetime()
 	var month
 	
-	match (date.month):
-		1:
-			month = 'January'
-		2:
-			month = 'February'
-		3:
-			month = 'March'
-		4:
-			month = 'April'
-		5:
-			month = 'May'
-		6:
-			month = 'June'
-		7:
-			month = 'July'
-		8:
-			month = 'August'
-		9:
-			month = 'September'
-		10:
-			month = 'October'
-		11:
-			month = 'November'
-		12:
-			month = 'December'
-
+	for i in range(1, MONTHS.size()):
+		if date.month == i:
+			month = MONTHS[i]
+	
 	return String(month + ' ' + String(date.day) + ', ' + String(date.year) + ' - ' + String(date.hour) + ':' + String(date.minute) + ':' + String(date.second))
 
 
