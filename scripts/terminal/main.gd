@@ -67,7 +67,6 @@ func transformDate():
 		if date.month == i:
 			month = MONTHS[i]
 	
-	# finally it returns the full date as string
 	return String(month + ' ' + String(date.day) + ', ' + String(date.year) + ' - ' + String(date.hour) + ':' + String(date.minute) + ':' + String(date.second))
 
 # Gets txt files and returns their content as string.
@@ -155,17 +154,6 @@ func addToHistory(command):
 	commandHistory.insert(historyIndex, String(command))
 
 
-func _on_anim_tween_completed(_object, _key):
-	finished = true
-	consoleLog.scroll_following = true
-
-
-func _on_console__input_text_entered(new_text):
-	if new_text.empty() != true:
-		addToConsoleLog(1, new_text, '\n\n')
-		validateCommand(new_text)
-		addToHistory(new_text)
-
 # Simple commands
 func clearTerminal():
 	consoleLog.bbcode_text = ''
@@ -176,14 +164,24 @@ func printDate():
 func showHelp():
 	addToConsoleLog(0, load_file('res://media/txt/help.txt'))
 
-
 func printHistory():
 	for i in historyIndex + 1:
 		addToConsoleLog(0, String(i) + String(': ' + commandHistory[i]))
-
 
 func listContent():
 	pass
 
 func printCurrentDir():
 	addToConsoleLog(0, currentDirectory)
+
+# Signals
+func _on_anim_tween_completed(_object, _key):
+	finished = true
+	consoleLog.scroll_following = true
+
+
+func _on_console__input_text_entered(new_text):
+	if new_text.empty() != true:
+		addToConsoleLog(1, new_text, '\n\n')
+		validateCommand(new_text)
+		addToHistory(new_text)
