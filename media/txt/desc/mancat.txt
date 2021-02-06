@@ -4,9 +4,10 @@
 The command line program cat (short for concatenate) was
 developed as a tool for the combination of file content and can
 be used as a pager for the display of file content in the
-terminal.
+terminal. It can display the content of every type of file
+except .sh files
 ----------------------------------------------------------------
-Syntax:					cat [file].txt
+Syntax:					cat [file]
 
 Example of use:			cat names.txt
 ----------------------------------------------------------------

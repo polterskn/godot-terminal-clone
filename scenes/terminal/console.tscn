@@ -37,11 +37,13 @@ margin_left = 24.0
 margin_top = 24.0
 margin_right = -24.0
 margin_bottom = -88.0
+focus_mode = 2
 theme = ExtResource( 5 )
 custom_styles/focus = ExtResource( 2 )
 custom_styles/normal = ExtResource( 2 )
 custom_fonts/normal_font = ExtResource( 1 )
 bbcode_enabled = true
+selection_enabled = true
 __meta__ = {
 "_edit_use_anchors_": false
 }

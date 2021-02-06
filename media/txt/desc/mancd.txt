@@ -6,12 +6,12 @@ is used for navigation in the directory tree.
 You can only navigate to directories that are within the current
 directory. To show directories you can access use the ls command.
 ----------------------------------------------------------------
-Syntax:					cd [directory]
+Syntax:					cd /[directory]
 
-Example of use:			cd myStuff
+Example of use:			cd /myStuff
 ----------------------------------------------------------------
 [center]Basic navigation commands[/center]
 ----------------------------------------------------------------
-	cd .. <------------- Shortcut to parent (previous) directory.
-	cd / <-------------- Shortcut to root (/home/user) directory.
+	cd .. <------------- Navigate to parent (previous) directory.
+	cd / <-------------- Navigate to root (/home/user) directory.
 ----------------------------------------------------------------

@@ -1,0 +1,66 @@
+{
+  "results": [
+    {
+      "gender": "NaN",
+      "name": {
+        "title": "Dr",
+        "first": "Null",
+        "last": "Null"
+      },
+      "location": {
+        "street": {
+          "number": 8437,
+          "name": "Torbjørns vei"
+        },
+        "city": "Kongsberg",
+        "state": "Bergen",
+        "country": "Norway",
+        "postcode": "4827",
+        "coordinates": {
+          "latitude": "52.2648",
+          "longitude": "-25.2210"
+        },
+        "timezone": {
+          "offset": "-11:00",
+          "description": "Midway Island, Samoa"
+        }
+      },
+      "email": "methods.revuser@yopmail.com",
+      "login": {
+        "uuid": "610de624-9397-49ce-8916-c72978587845",
+        "username": "biggorilla803",
+        "password": "urgbn9qero97",
+        "salt": "JnLEJY4d",
+        "md5": "524050de61b4b70f72f0b5e76743440e",
+        "sha1": "a7c9fccaf32ca998b82a5bdb232b0a57652fdaf9",
+        "sha256": "9b1681aae7b5938ba6424224456f3b5f1f1e689ff57f1f465fc3366853b0ffa5"
+      },
+      "dob": {
+        "date": "1971-07-16T07:10:13.401Z",
+        "age": 50
+      },
+      "registered": {
+        "date": "2004-06-28T09:09:57.163Z",
+        "age": 17
+      },
+      "phone": "55354523",
+      "cell": "40258951",
+      "id": {
+        "name": "FN",
+        "value": "16077109971"
+      },
+      "picture": {
+        "large": "https://thispersondoesnotexist.com/",
+        "medium": "https://thispersondoesnotexist.com/",
+        "thumbnail": "https://thispersondoesnotexist.com/"
+      },
+      "nat": "NO"
+    }
+  ],
+  "info": {
+    "seed": "7efc05519fbaaacb",
+    "results": 1,
+    "page": 1,
+    "version": "1.3"
+  }
+}

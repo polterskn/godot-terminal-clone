@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About | Eternity Project</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header__logo">
+        <svg
+          preserveAspectRatio="xMidYMid meet"
+          data-bbox="24 33 152.001 134"
+          viewBox="24 33 152.001 134"
+          height="200"
+          width="200"
+          xmlns="http://www.w3.org/2000/svg"
+          data-type="shape"
+          role="img"
+          aria-labelledby="comp-k4l5zl94-svgtitle"
+        >
+          <title id="comp-k4l5zl94-svgtitle"></title>
+          <g>
+            <path
+              d="M159.621 121.057L109.217 38.8c-4.726-7.737-16.025-7.732-20.745.009L26.236 140.885c-7.475 12.26 5.093 26.906 18.453 21.504l100.386-40.592c9.257-3.675 14.546-.74 14.546-.74z"
+            ></path>
+            <path
+              d="M173.822 144.873l-4.835-7.931c-3.723-6.107-11.357-8.624-18.015-5.94l-43.744 17.637 49.153 17.467c12.971 4.609 24.58-9.524 17.441-21.233z"
+            ></path>
+          </g>
+        </svg>
+        <span><b> Eternity</b> Project</span>
+      </div>
+      <nav class="header__nav">
+        <ul class="nav__ul">
+          <li><a href="#">About</a></li>
+          <li><a href="#">Participants</a></li>
+          <li><a href="#">Live</a></li>
+        </ul>
+        <details class="nav__user">
+          <summary class="user__profile">
+            <span></span>
+          </summary>
+          <ul>
+            <li><a href="#">Account</a></li>
+            <li><a href="#">Log out</a></li>
+          </ul>
+        </details>
+        <details class="nav__exception">
+          <summary class="exception__drop">
+            <span></span>
+          </summary>
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Participants</a></li>
+            <li><a href="#">Live</a></li>
+            <li class="list__separation"><a href="#">Account</a></li>
+            <li><a href="#">Log out</a></li>
+          </ul>
+        </details>
+      </nav>
+    </header>
+    <main class="home__main">
+      <section class="main__intro">
+        <div class="intro__title">
+          <h1>See our story.</h1>
+          <p>Learn more about our revolutionary approach.</p>
+        </div>
+        <video
+          class="intro__video"
+          controls
+          preload="auto"
+          src="https://video.wixstatic.com/video/c029b6_74c66e9cdbff40d9ae7779a3ce0e5e6b/1080p/mp4/file.mp4"
+        ></video>
+      </section>
+      <section class="main__about">
+        <h2>Why Choose Digitization?</h2>
+        <section class="main__articles">
+          <article class="about__article row1 flex1">
+            <p class="article__title">Human Fragility</p>
+            <p class="article__content">
+              Despite our best efforts and medical advancements, the human body
+              ultimately has a finite life span. The unavoidable truth is that
+              from the moment we are born, the moments we have on this world are
+              fleeting. We can prolong the effects of aging with a healthy diet,
+              smart lifestyle choices, and exercise, but all of us ultimately
+              have to face the same reality in the end - death. Since the dawn
+              of time mankind has been searching for an answer to this
+              inevitability.
+            </p>
+          </article>
+          <span class="article__icon man"></span>
+          <article class="about__article row2 flex2">
+            <p class="article__title">A Digital Solution</p>
+            <p class="article__content">
+              For decades the minds behind Ne Solutions have worked in over
+              13 countries in search of that very same solution, but it was only
+              in the 21st century that we realized that we finally had the means
+              to obtain it. Through trial and error, they eventually found that
+              by utilizing a process called digitization it was possible to
+              completely transfer a human's brain indefinitely into a digital
+              network. Though the patient leaves their physical body, their mind
+              and spirit remain completely intact.
+            </p>
+          </article>
+          <span class="article__icon stats"></span>
+          <article class="about__article row1 flex3">
+            <p class="article__title">A Brighter Tomorrow</p>
+            <p class="article__content">
+              This revolutionary new method has allowed digitized humans to
+              overcome our limitations and live eternally in a virtual
+              cyberspace - free from the burdens of our natural world. With
+              every passing year, the list of worlds developed by our team
+              continues to expand - ranging from simulated worlds identical to
+              ours, re-imagined popular movies & games, far away planets, and
+              more. Participants can choose to live in these worlds as long or
+              as little as they wish before moving onto the next world to
+              explore.
+            </p>
+          </article>
+          <span class="article__icon plane"></span>
+          <article class="about__article row2 flex4">
+            <p class="article__title">An Uncertain Future</p>
+            <p class="article__content">
+              In these increasingly uncertain times, the only certainty we have
+              is that one can never predict when their number comes. Although
+              research is progressing into digitization after expiry, the
+              efforts to restore the neural activity required remain
+              unsuccessful. Many proactive people, both young and old, are
+              deciding to take fate into their own hands and are signing up for
+              our clinics now more than ever before. In as little as 4-6 weeks
+              you can have your initial consultation and begin your process
+              towards an incredible journey.
+            </p>
+          </article>
+          <span class="article__icon heart"></span>
+        </section>
+      </section>
+      <section class="main__cards">
+        <h3>Roadmap</h3>
+        <p class="roadmap__info">
+          At Ne Solutions we are always striving to improve our process to
+          continue to offer a myriad of options for our patients to enjoy. Here
+          are just a few things to anticipate as the development team finishes
+          out the year and looks into the near future:
+        </p>
+        <section class="main__carousel">
+          <div class="carousel__container">
+            <div class="carousel-item">
+              <div class="carousel-gradient">
+                <div class="carousel-item__text">
+                  <p class="carousel-item__details">Q4 2020 - Q1 2021</p>
+                  <p class="carousel-item__info">
+                    - Roman Empire world enters preliminary testing<br />
+                    - World merger technology expected to release<br />
+                    - Legacy code overhaul and removal
+                  </p>
+                </div>
+              </div>
+              <img
+                class="carousel-item__img"
+                src="https://i.ibb.co/L9572Pk/code.jpg"
+                alt="Code"
+              />
+            </div>
+            <div class="carousel-item">
+              <div class="carousel-gradient">
+                <div class="carousel-item__text">
+                  <p class="carousel-item__details">Q2 2021 - Q1 2022</p>
+                  <p class="carousel-item__info">
+                    - More streamlined welcome experience<br />
+                    - General performance improvements, stability adjustments
+                    and bug fixes
+                  </p>
+                </div>
+              </div>
+              <img
+                class="carousel-item__img"
+                src="https://i.ibb.co/xS0j9tZ/fixing.jpg"
+                alt="Fixing"
+              />
+            </div>
+            <div class="carousel-item">
+              <div class="carousel-gradient">
+                <div class="carousel-item__text">
+                  <p class="carousel-item__details">Q2 2022 - Q4 2023</p>
+                  <p class="carousel-item__info">
+                    - Global Digitization Initiative begins<br />
+                    - Removing avatar constraints<br />
+                    - User created world testing enters alpha
+                  </p>
+                </div>
+              </div>
+              <img
+                class="carousel-item__img"
+                src="https://i.ibb.co/WsL80TH/globe.jpg"
+                alt="Globe"
+              />
+            </div>
+            <div class="carousel-item">
+              <div class="carousel-gradient">
+                <div class="carousel-item__text">
+                  <p class="carousel-item__details">Q5 2023 - Q1 2024</p>
+                  <p class="carousel-item__info">
+                    - Development begins on Digital Revival<br />
+                    - Superhero world leaves closed beta<br />
+                    - Integration with older hardware begins testing
+                  </p>
+                </div>
+              </div>
+              <img
+                class="carousel-item__img"
+                src="https://i.ibb.co/mbbCvqf/server.jpg"
+                alt="Server"
+              />
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+    <footer>
+      <p>©2021 by Ne Solutions</p>
+      <ul class="footer__ul">
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Legal</a></li>
+      </ul>
+    </footer>
+  </body>
+</html>

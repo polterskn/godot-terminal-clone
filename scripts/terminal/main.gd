@@ -1,7 +1,6 @@
 extends Control
 
 
-const ROOT_DIR = '/home/user'
 const MONTHS = ['', 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 const SIMPLE_COMMANDS = ['clear', 'date', 'help', 'history', 'ls', 'pwd']
 
@@ -20,15 +19,26 @@ var simpleFunctions = [
 	funcref(self, "printCurrentDir")
 ]
 
+var root = dir.new()
+var bin = dir.new()
+var user = dir.new()
+var bash = dir.new()
+var docs = dir.new()
+var down = dir.new()
+var meth = dir.new()
+
+var tree = [root, bin, user, bash, docs, down, meth]
+
 var commandHistory = []
 var historyIndex = -1
 
-var currentDirectory
+var currentDir = root
 
 var finished = false
 
 # Called once after the scene is created
 func _ready():
+	initTree()
 	initTerminal()
 
 # Called once per frame
@@ -40,6 +50,16 @@ func _process(_delta):
 		consoleInput.placeholder_text = '[Waiting for input]'
 	else:
 		consoleInput.placeholder_text = ''
+
+# Initializes directory tree
+func initTree():
+	root.construct('/home', 0, ['/bin', '/user', 'gettingStarted.txt'])
+	bin.construct('/home/bin', 1, ['/bash', 'traveling.txt'])
+	user.construct('/home/user', 1, ['/documents', '/downloads'])
+	bash.construct('/home/bin/bash', 2, ['init.sh'])
+	docs.construct('/home/user/documents', 2, ['user.json', 'diary.txt'])
+	down.construct('/home/user/downloads', 2, ['/methodsWebsite'])
+	meth.construct('/home/user/downloads/methodsWebsite', 3, ['index.html', 'styles.css'])
 
 # Initializes the terminal
 func initTerminal():
@@ -55,8 +75,8 @@ func initTerminal():
 		consoleLog.bbcode_text += i
 	
 	consoleLog.scroll_following = false
-	printLog(initialText, 2) #10
-	currentDirectory = ROOT_DIR
+	printLog(initialText, 10) #10
+	addToConsoleLog(0, currentDir.location, '\n\n')
 
 # Gets datetime from OS and returns the full date as string
 func transformDate():
@@ -94,18 +114,18 @@ func validateCommand(command):
 	consoleInput.clear()
 	
 	if ' ' in command:
-		if 'man' in command:
+		if 'man' in command && command[0] == 'm':
 			commands.man(command)
-			return
-		elif 'cat' in command:
+			return true
+		elif 'cat' in command && command[0] == 'c':
 			commands.cat(command)
-			return
-		elif 'cd' in command:
+			return true
+		elif 'cd' in command && command[0] == 'c':
 			commands.cd(command)
-			return
-		elif 'run' in command:
+			return true
+		elif 'run' in command && command[0] == 'r':
 			commands.run(command)
-			return
+			return true
 		else:
 			exceptionOccur(0, command)
 			
@@ -113,6 +133,7 @@ func validateCommand(command):
 			for i in range(0, SIMPLE_COMMANDS.size()):
 				if command == SIMPLE_COMMANDS[i]:
 					simpleFunctions[i].call_func()
+					return true
 			
 			var exception
 			match command:
@@ -128,7 +149,7 @@ func validateCommand(command):
 					exceptionOccur(0, command)
 			
 			if exception != null:
-				exceptionOccur(1, String(command + exception))
+				exceptionOccur(1, String('>' + command + exception))
 
 # Adds a new line to consoleLog bbcode
 func addToConsoleLog(isLog, command, br = '\n'):
@@ -153,26 +174,32 @@ func addToHistory(command):
 	historyIndex += 1
 	commandHistory.insert(historyIndex, String(command))
 
-
 # Simple commands
 func clearTerminal():
 	consoleLog.bbcode_text = ''
 
+
 func printDate():
 	addToConsoleLog(0, transformDate())
 
+
 func showHelp():
 	addToConsoleLog(0, load_file('res://media/txt/help.txt'))
+
 
 func printHistory():
 	for i in historyIndex + 1:
 		addToConsoleLog(0, String(i) + String(': ' + commandHistory[i]))
 
+
 func listContent():
-	pass
+	for i in currentDir.content:
+			if i.length() > 0:
+				addToConsoleLog(0, i.replace('/', '[color=#FFFF00]/[/color]'))
+
 
 func printCurrentDir():
-	addToConsoleLog(0, currentDirectory)
+	addToConsoleLog(0, currentDir.location)
 
 # Signals
 func _on_anim_tween_completed(_object, _key):
