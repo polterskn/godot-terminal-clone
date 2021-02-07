@@ -4,26 +4,51 @@ extends Node
 onready var main = get_parent()
 
 # Checks if command syntax is correct (if not return an error log)
-func syntaxCheck(command, option):
+func syntaxCheck(command):
 	if !'  ' in command:
 		if 'cd ' in command:
 			return true
 		elif ' ' in command[3]:
 			return true
-	
-	if '  ' in command:
-		main.exceptionOccur(0, command)
-	else:
-		main.exceptionOccur(1, String('>' + command.replace(" ", "") + ' ' + option))
 
 # Complex commands
 func cat(syntax):
-	if syntaxCheck(syntax, '[file]'):
-		print('cat success')
+	if syntaxCheck(syntax) && syntax != 'cat ':
+		if main.currentDir.content != []:
+			var file = syntax.replace('cat', '').replace(' ', '')
+			
+			for i in main.currentDir.content:
+				if i == file && !('/' in file):
+					if !'.sh' in file:
+						var route
+						
+						if '.txt' in file:
+							route = String('res://media/txt/' + file)
+						elif '.css' in file:
+							file.erase(file.length() - 4, 4)
+						else:
+							file.erase(file.length() - 5, 5)
+						
+						if route == null:
+							route = String('res://media/txt/' + file + '.txt')
+						
+						main.addToConsoleLog(0, main.load_file(route))
+						return true
+					
+					else:
+						main.addToConsoleLog(0, 'cat: Unsupported file type')
+						return true
+			
+			main.addToConsoleLog(0, String('cat: File ' + file + ' not found'))
+		
+		else:
+			main.addToConsoleLog(0, 'cat: Current directory is empty')
+	else:
+		main.exceptionOccur(1, String('>cat [file]'))
 
 
 func cd(syntax):
-	if syntaxCheck(syntax, '[directory]') && syntax != 'cd ':
+	if syntaxCheck(syntax) && syntax != 'cd ':
 		var dir = syntax.replace('cd', '').replace(' ', '')
 		
 		if dir == '/':
@@ -37,7 +62,7 @@ func cd(syntax):
 					var parentDir = getDirParent(main.currentDir)
 					changeDirectory(parentDir)
 			else:
-				main.addToConsoleLog(0, 'You are already in the root directory')
+				main.addToConsoleLog(0, 'cd: You are already in the root directory')
 		
 		elif dir != '':
 			var dirValidate = dirExists(dir)
@@ -48,9 +73,9 @@ func cd(syntax):
 				if dirLocation == dirValidate.location:
 					changeDirectory(dirValidate)
 				else:
-					main.addToConsoleLog(0, String('Directory ' + dir + ' not found'))
+					main.addToConsoleLog(0, String('cd: Directory ' + dir + ' not found'))
 	else:
-		main.exceptionOccur(1, String('>' + syntax.replace(" ", "") + ' [directory]'))
+		main.exceptionOccur(1, String('>cd [directory]'))
 
 func getDirParent(dir):
 	var parentIndex = dir.index - 1
@@ -68,16 +93,16 @@ func dirExists(dir):
 			if dir in i.location:
 				return i
 		
-		main.addToConsoleLog(0, String('Directory ' + dir + ' not found'))
+		main.addToConsoleLog(0, String('cd: Directory ' + dir + ' not found'))
 	else:
-		main.exceptionOccur(1, String('maybe you meant -> /' + dir.replace('/', '')))
+		main.exceptionOccur(1, String('cd: Maybe you meant -> /' + dir.replace('/', '')))
 
 func changeDirectory(dir):
 	main.currentDir = dir
 
 
 func man(syntax):
-	if syntaxCheck(syntax, '[command]'):
+	if syntaxCheck(syntax) && syntax != 'man ':
 			var param = ['mancat', 'mancd', 'manclear', 'mandate', 'manhelp', 'manhistory', 'manls', 'manman', 'manrun', 'manpwd']
 			var option = String(syntax.replace(" ", ""))
 			
@@ -87,9 +112,29 @@ func man(syntax):
 					main.addToConsoleLog(0, main.load_file(route))
 					return true
 					
-			main.exceptionOccur(1, String('>man ' + option.replace("man", "") + ' [nonexistent option]'))
+			main.addToConsoleLog(0, String('man: ' + option.replace("man", "") + ': Nonexistent option'))
+	else:
+		main.exceptionOccur(1, String('>man [command]'))
 
 
 func run(syntax):
-	if syntaxCheck(syntax, '[file]'):
-		print('run success')
+	if syntaxCheck(syntax) && syntax != 'run ':
+		if main.currentDir.content != []:
+			var file = syntax.replace('run', '').replace(' ', '')
+			
+			for i in main.currentDir.content:
+				if i == file && !('/' in file):
+					if '.sh' in file:
+						print('run success on ', file)
+						return true
+					
+					else:
+						main.addToConsoleLog(0, 'run: Unsupported file type')
+						return true
+			
+			main.addToConsoleLog(0, String('run: File ' + file + ' not found'))
+		
+		else:
+			main.addToConsoleLog(0, 'run: Current directory is empty')
+	else:
+		main.exceptionOccur(1, String('>run [file]'))

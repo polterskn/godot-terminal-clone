@@ -75,7 +75,7 @@ func initTerminal():
 		consoleLog.bbcode_text += i
 	
 	consoleLog.scroll_following = false
-	printLog(initialText, 10) #10
+	printLog(initialText, 2) #10
 	addToConsoleLog(0, currentDir.location, '\n\n')
 
 # Gets datetime from OS and returns the full date as string

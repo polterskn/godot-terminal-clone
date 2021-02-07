@@ -71,7 +71,6 @@ custom_styles/normal = ExtResource( 2 )
 custom_fonts/font = ExtResource( 1 )
 max_length = 50
 context_menu_enabled = false
-shortcut_keys_enabled = false
 placeholder_alpha = 0.3
 __meta__ = {
 "_edit_use_anchors_": false
