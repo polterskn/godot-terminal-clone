@@ -75,8 +75,8 @@ func initTerminal():
 		consoleLog.bbcode_text += i
 	
 	consoleLog.scroll_following = false
-	printLog(initialText, 2) #10
-	addToConsoleLog(0, currentDir.location, '\n\n')
+	printLog(initialText, 2) #8
+	addToConsoleLog(2, currentDir.location, '\n\n')
 
 # Gets datetime from OS and returns the full date as string
 func transformDate():
@@ -116,16 +116,16 @@ func validateCommand(command):
 	if ' ' in command:
 		if 'man' in command && command[0] == 'm':
 			commands.man(command)
-			return true
+			return
 		elif 'cat' in command && command[0] == 'c':
 			commands.cat(command)
-			return true
+			return
 		elif 'cd' in command && command[0] == 'c':
 			commands.cd(command)
-			return true
+			return
 		elif 'run' in command && command[0] == 'r':
 			commands.run(command)
-			return true
+			return
 		else:
 			exceptionOccur(0, command)
 			
@@ -133,7 +133,7 @@ func validateCommand(command):
 			for i in range(0, SIMPLE_COMMANDS.size()):
 				if command == SIMPLE_COMMANDS[i]:
 					simpleFunctions[i].call_func()
-					return true
+					return
 			
 			var exception
 			match command:
@@ -152,13 +152,15 @@ func validateCommand(command):
 				exceptionOccur(1, String('>' + command + exception))
 
 # Adds a new line to consoleLog bbcode
-func addToConsoleLog(isLog, command, br = '\n'):
+func addToConsoleLog(type, logCont, br = '\n'):
 	var newline
 	
-	if isLog == 1:
-		newline = String(br + '[color=#00FF00]>' + command + '[/color]')
+	if type == 1:
+		newline = String(br + '[color=#00FF00]>' + logCont + '[/color]')
+	elif type == 2:
+		newline = String(br + logCont).replace('/', '[color=#FFFF00]/[/color]')
 	else:
-		newline = String(br + command)
+		newline = String(br + logCont)
 	
 	consoleLog.bbcode_text += newline
 
@@ -195,11 +197,11 @@ func printHistory():
 func listContent():
 	for i in currentDir.content:
 			if i.length() > 0:
-				addToConsoleLog(0, i.replace('/', '[color=#FFFF00]/[/color]'))
+				addToConsoleLog(2, i)
 
 
 func printCurrentDir():
-	addToConsoleLog(0, currentDir.location)
+	addToConsoleLog(2, currentDir.location)
 
 # Signals
 func _on_anim_tween_completed(_object, _key):

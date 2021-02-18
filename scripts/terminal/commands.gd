@@ -33,11 +33,11 @@ func cat(syntax):
 							route = String('res://media/txt/' + file + '.txt')
 						
 						main.addToConsoleLog(0, main.load_file(route))
-						return true
+						return
 					
 					else:
 						main.addToConsoleLog(0, 'cat: Unsupported file type')
-						return true
+						return
 			
 			main.addToConsoleLog(0, String('cat: File ' + file + ' not found'))
 		
@@ -110,7 +110,7 @@ func man(syntax):
 				if option == param[i]:
 					var route = String('res://media/txt/desc/' + option + '.txt')
 					main.addToConsoleLog(0, main.load_file(route))
-					return true
+					return
 					
 			main.addToConsoleLog(0, String('man: ' + option.replace("man", "") + ': Nonexistent option'))
 	else:
@@ -126,11 +126,11 @@ func run(syntax):
 				if i == file && !('/' in file):
 					if '.sh' in file:
 						print('run success on ', file)
-						return true
+						return
 					
 					else:
 						main.addToConsoleLog(0, 'run: Unsupported file type')
-						return true
+						return
 			
 			main.addToConsoleLog(0, String('run: File ' + file + ' not found'))
 		
