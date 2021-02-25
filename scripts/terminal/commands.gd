@@ -3,7 +3,7 @@ extends Node
 
 onready var main = get_parent()
 
-# Checks if command syntax is correct (if not return an error log)
+# Checks if command syntax is correct.
 func syntaxCheck(command):
 	if !'  ' in command:
 		if 'cd ' in command:
@@ -11,7 +11,7 @@ func syntaxCheck(command):
 		elif ' ' in command[3]:
 			return true
 
-# Complex commands
+# Complex commands.
 func cat(syntax):
 	if syntaxCheck(syntax) && syntax != 'cat ':
 		if main.currentDir.content != []:
