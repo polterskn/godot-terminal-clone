@@ -5,11 +5,11 @@ onready var base_size = Vector2(1920, 1080)
 
 
 func _ready():
-	#set_fullscreen()
-	set_windowed()
+	#setFullscreen()
+	setWindowed()
 
 
-func set_fullscreen():
+func setFullscreen():
 	var window_size = OS.get_screen_size()
 	
 	if OS.get_name() == 'Windows' && window_size == base_size:
@@ -31,7 +31,7 @@ func set_fullscreen():
 		vp.set_attach_to_screen_rect(screen_rect)
 
 
-func set_windowed():
+func setWindowed():
 	var window_size = OS.get_screen_size()
 		# Sets the windowed version to an arbitrary 80% of screen size here
 	var scale = min(window_size.x / base_size.x, window_size.y / base_size.y) * 0.8

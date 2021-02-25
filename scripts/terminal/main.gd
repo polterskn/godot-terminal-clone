@@ -36,7 +36,7 @@ var currentDir = root
 
 var finished = false
 
-# Called once after the scene is created
+# Called once after the scene is created.
 func _ready():
 	initTree()
 	initTerminal()
@@ -51,7 +51,7 @@ func _process(_delta):
 	else:
 		consoleInput.placeholder_text = ''
 
-# Initializes directory tree
+# Initializes directory tree.
 func initTree():
 	root.construct('/home', 0, ['/bin', '/user', 'gettingStarted.txt'])
 	bin.construct('/home/bin', 1, ['/bash', 'traveling.txt'])
@@ -61,7 +61,7 @@ func initTree():
 	down.construct('/home/user/downloads', 2, ['/methodsWebsite'])
 	meth.construct('/home/user/downloads/methodsWebsite', 3, ['index.html', 'styles.css'])
 
-# Initializes the terminal
+# Initializes the terminal.
 func initTerminal():
 	var br = '\n\n'
 	var initialText = []
@@ -78,7 +78,7 @@ func initTerminal():
 	printLog(initialText, 2) #8
 	addToConsoleLog(2, currentDir.location, '\n\n')
 
-# Gets datetime from OS and returns the full date as string
+# Gets datetime from OS and returns the full date as string.
 func transformDate():
 	var date = OS.get_datetime()
 	var month
@@ -98,7 +98,7 @@ func load_file(file):
 	f.close()
 	return data
 
-# Animates consoleLog percent_visible property
+# Animates consoleLog percent_visible property.
 func printLog(_dialog, duration):
 	finished = false
 	consoleLog.percent_visible = 0
@@ -108,7 +108,7 @@ func printLog(_dialog, duration):
 	)
 	anim.start()
 
-# Validates whether the introduced command exists or not
+# Validates whether the introduced command exists or not.
 func validateCommand(command):
 	
 	consoleInput.clear()
@@ -151,7 +151,7 @@ func validateCommand(command):
 			if exception != null:
 				exceptionOccur(1, String('>' + command + exception))
 
-# Adds a new line to consoleLog bbcode
+# Adds a new line to consoleLog bbcode.
 func addToConsoleLog(type, logCont, br = '\n'):
 	var newline
 	
@@ -164,14 +164,14 @@ func addToConsoleLog(type, logCont, br = '\n'):
 	
 	consoleLog.bbcode_text += newline
 
-# Adds an error line to consoleLog bbcode
+# Adds an error line to consoleLog bbcode.
 func exceptionOccur(id, exception):
 	if id == 0:
 		addToConsoleLog(0, String('Command not found: ' + exception))
 	else:
 		addToConsoleLog(0, String('Syntax error: ' + exception))
 
-# Adds the introduced command to historyIndex array
+# Adds the introduced command to historyIndex array.
 func addToHistory(command):
 	historyIndex += 1
 	commandHistory.insert(historyIndex, String(command))
@@ -203,7 +203,7 @@ func listContent():
 func printCurrentDir():
 	addToConsoleLog(2, currentDir.location)
 
-# Signals
+# Signals.
 func _on_anim_tween_completed(_object, _key):
 	finished = true
 	consoleLog.scroll_following = true
