@@ -10,6 +10,9 @@ const MOVEMENTS = {
 	'ui_down': Vector2.DOWN,
 }
 
+onready var anim_tree = $tree
+onready var anim_mode = anim_tree.get("parameters/playback")
+
 var direction_history = []
 var motion = Vector2()
 var speed = 400
@@ -64,6 +67,11 @@ func controlsLoop():
 	if direction_history.size():
 		var direction = direction_history[direction_history.size() - 1]
 		motion = MOVEMENTS[direction]
+		anim_tree.set("parameters/Walk/blend_position", motion.normalized())
+		anim_tree.set("parameters/Idle/blend_position", motion.normalized())
+		anim_mode.travel("Walk")
+	else:
+		anim_mode.travel("Idle")
 
 # Called every frame.
 func _process(_delta):
