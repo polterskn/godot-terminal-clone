@@ -13,9 +13,12 @@ const MOVEMENTS = {
 onready var anim_tree = $tree
 onready var anim_mode = anim_tree.get("parameters/playback")
 
+var min_max = global.jsonify("res://media/json/sizes.json")
+
 var direction_history = []
 var motion = Vector2()
 var speed = 400
+var speed_mult = speed
 
 var scr_div = 2.25
 
@@ -24,18 +27,23 @@ var size = {
 	y = 1080
 }
 
-var breakpoints = []
+var max_size = 1
+var min_size = 1
 
 var max_vp
 var min_vp
 
-var max_size = 1
-var min_size = 0.2
-
 
 func _ready():
+	var scene_name = get_tree().get_current_scene().get_name()
+	
+	speed_mult = min_max[scene_name]["speed"]
+	
 	min_vp = size.y - size.y / scr_div
 	max_vp = size.y
+	
+	max_size = min_max[scene_name]["max"]
+	min_size = min_max[scene_name]["min"]
 
 
 func _physics_process(_delta):
@@ -62,7 +70,7 @@ func controlsLoop():
 		
 		var pl_scale = float(String(scale).replace('(', '').replace(')', '').left(4))
 		
-		speed = pl_scale * 400
+		speed = pl_scale * speed_mult
 
 	if direction_history.size():
 		var direction = direction_history[direction_history.size() - 1]
@@ -86,6 +94,6 @@ func calcScale():
 	
 	scale = Vector2(new_scale, new_scale)
 
-# Interpolates player scale change, so it doesn't look rough.
+
 func interpolate(minSize, maxSize, ratio):
 	return minSize + (maxSize - minSize) * ratio

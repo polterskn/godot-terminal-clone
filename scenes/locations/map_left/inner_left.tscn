@@ -1,0 +1,61 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/entities/player/player_controller.tscn" type="PackedScene" id=1]
+[ext_resource path="res://media/png/locations/map_left/inner_left/inner_left_night.png" type="Texture" id=2]
+[ext_resource path="res://media/png/locations/map_left/inner_left/tiles/0.png" type="Texture" id=3]
+[ext_resource path="res://media/png/locations/map_left/inner_left/tiles/1.png" type="Texture" id=4]
+
+[node name="inner_left" type="Node2D"]
+
+[node name="bg" type="Node2D" parent="."]
+
+[node name="bg_cycle" type="TextureRect" parent="bg"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bounds" type="Node2D" parent="."]
+
+[node name="border" type="StaticBody2D" parent="bounds"]
+
+[node name="c" type="CollisionPolygon2D" parent="bounds/border"]
+build_mode = 1
+polygon = PoolVector2Array( 0, 744, 0, 1080, 1920, 1080, 1920, 728, 1928, 728, 1928, 1088, -8, 1088, -8, 744 )
+
+[node name="in" type="StaticBody2D" parent="bounds"]
+
+[node name="c" type="CollisionPolygon2D" parent="bounds/in"]
+build_mode = 1
+polygon = PoolVector2Array( 0, 776, 743.675, 686.842, 967.326, 685.301, 1061.57, 675.193, 1061.47, 724.723, 1920, 752, 1920, 728, 1088, 704, 1085.5, 648.5, 966.561, 659.887, 741.665, 661.777, 0, 744 )
+
+[node name="sort" type="YSort" parent="."]
+
+[node name="z_0" type="StaticBody2D" parent="sort"]
+position = Vector2( 1283.98, 821.344 )
+
+[node name="0" type="Sprite" parent="sort/z_0"]
+position = Vector2( -74.9824, -17.844 )
+texture = ExtResource( 3 )
+
+[node name="c" type="CollisionPolygon2D" parent="sort/z_0"]
+position = Vector2( -1283.98, -821.344 )
+build_mode = 1
+polygon = PoolVector2Array( 1114.26, 815.751, 1117.53, 808, 1285.91, 814.299, 1303.77, 812.393, 1284.14, 821.939 )
+
+[node name="z_1" type="StaticBody2D" parent="sort"]
+position = Vector2( 1918.77, 844.737 )
+
+[node name="1" type="Sprite" parent="sort/z_1"]
+position = Vector2( -76.7781, -18.1553 )
+texture = ExtResource( 4 )
+
+[node name="c" type="CollisionPolygon2D" parent="sort/z_1"]
+position = Vector2( -1918.77, -844.737 )
+build_mode = 1
+polygon = PoolVector2Array( 1920, 838.203, 1919.99, 845.32, 1766.4, 839.887, 1767.86, 831.634 )
+
+[node name="Body" parent="sort" instance=ExtResource( 1 )]
+position = Vector2( 1025.56, 995.895 )

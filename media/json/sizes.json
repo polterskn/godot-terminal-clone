@@ -1,0 +1,13 @@
+{
+  "main_left": {
+    "max": 1,
+    "min": 0.2,
+    "speed": 500
+  },
+
+  "inner_left": {
+    "max": 2,
+    "min": 0.2,
+    "speed": 400
+  }
+}

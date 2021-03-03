@@ -23,7 +23,7 @@ extents = Vector2( 6.27417, 7.24933 )
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 129.96, 9.64209 )
 
-[node name="Mundo" type="Node2D"]
+[node name="main_left" type="Node2D"]
 
 [node name="bg" type="Node2D" parent="."]
 z_index = -1
@@ -42,7 +42,7 @@ __meta__ = {
 
 [node name="c" type="CollisionPolygon2D" parent="bounds/border"]
 build_mode = 1
-polygon = PoolVector2Array( 1920, 616, 1920, 1080, 0, 1080, 0, 616, -8, 616, -8, 1088, 1928, 1088, 1928, 616 )
+polygon = PoolVector2Array( 1920, 672, 1920, 1080, 0, 1080, 0, 680, -8, 680, -8, 1088, 1928, 1088, 1928, 672 )
 
 [node name="in" type="StaticBody2D" parent="bounds"]
 
