@@ -1,7 +1,7 @@
 extends Control
 
 
-const MONTHS = ['', 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+const COMPLEX_COMMANDS = ['cat', 'cd', 'man', 'run']
 const SIMPLE_COMMANDS = ['clear', 'date', 'help', 'history', 'ls', 'pwd']
 
 onready var consoleLog = $Console/console__log
@@ -29,6 +29,8 @@ var meth = dir.new()
 
 var tree = [root, bin, user, bash, docs, down, meth]
 
+var translate = global.jsonify("res://media/json/langs/terminal/commands.json")
+
 var commandHistory = []
 var historyIndex = -1
 
@@ -47,9 +49,15 @@ func _process(_delta):
 	writeIndicator.visible = finished
 	
 	if finished == true:
-		consoleInput.placeholder_text = '[Waiting for input]'
+		consoleInput.placeholder_text = translate["HOLDER"][global.current_lang]
 	else:
 		consoleInput.placeholder_text = ''
+
+# Detects player input
+func _input(_event):
+	if commandHistory != []:
+		if Input.is_action_pressed("ui_up") && consoleInput.has_focus():
+			consoleInput.text = commandHistory[commandHistory.size() - 1]
 
 # Initializes directory tree.
 func initTree():
@@ -67,36 +75,34 @@ func initTerminal():
 	var initialText = []
 	
 	initialText.insert(0, transformDate() + br)
-	initialText.insert(1, load_file('res://media/txt/greet.txt') + br)
+	initialText.insert(1, global.load_file('res://media/txt/greet.txt') + br)
 	initialText.insert(2, '©' + String(OS.get_datetime().year) + ' by Ne Solutions' + br)
-	initialText.insert(3, load_file('res://media/txt/intro.txt'))
+	initialText.insert(3, global.get_file_lang('res://media/json/langs/terminal/intro.json'))
 	
 	for i in initialText:
 		consoleLog.bbcode_text += i
 	
 	consoleLog.scroll_following = false
 	printLog(initialText, 2) #8
-	addToConsoleLog(2, currentDir.location, '\n\n')
+	addToConsoleLog(2, currentDir.location, br)
 
 # Gets datetime from OS and returns the full date as string.
 func transformDate():
 	var date = OS.get_datetime()
 	var month
+	var MONTHS = translate["MONTHS"][global.current_lang]
 	
 	for i in range(1, MONTHS.size()):
 		if date.month == i:
 			month = MONTHS[i]
 	
-	return String(month + ' ' + String(date.day) + ', ' + String(date.year) + ' - ' + String(date.hour) + ':' + String(date.minute) + ':' + String(date.second))
-
-# Gets txt files and returns their content as string.
-func load_file(file):
-	var f = File.new()
-	var data
-	f.open(file, File.READ)
-	data = f.get_as_text()
-	f.close()
-	return data
+	match global.current_lang:
+		"en":
+			return String(month + ' ' + String(date.day) + ', ' + String(date.year) + ' - ' + String(date.hour) + ':' + String(date.minute) + ':' + String(date.second))
+		"es":
+			return String(String(date.day) + ' de ' + month + ' de ' + String(date.year) + ' - ' + String(date.hour) + ':' + String(date.minute) + ':' + String(date.second))
+		"eo":
+			return String(String(date.day) + ' ' + month + ' ' + String(date.year) + ' - ' + String(date.hour) + ':' + String(date.minute) + ':' + String(date.second))
 
 # Animates consoleLog percent_visible property.
 func printLog(_dialog, duration):
@@ -135,21 +141,10 @@ func validateCommand(command):
 					simpleFunctions[i].call_func()
 					return
 			
-			var exception
-			match command:
-				'man':
-					exception = ' [command]'
-				'cat':
-					exception = ' [file]'
-				'cd':
-					exception = ' [directory]'
-				'run':
-					exception = ' [file]'
-				_:
-					exceptionOccur(0, command)
-			
-			if exception != null:
-				exceptionOccur(1, String('>' + command + exception))
+			if command in COMPLEX_COMMANDS:
+				exceptionOccur(1, String('>' + command + translate["COMMAND"][command][global.current_lang]))
+			else:
+				exceptionOccur(0, command)
 
 # Adds a new line to consoleLog bbcode.
 func addToConsoleLog(type, logCont, br = '\n'):
@@ -167,9 +162,9 @@ func addToConsoleLog(type, logCont, br = '\n'):
 # Adds an error line to consoleLog bbcode.
 func exceptionOccur(id, exception):
 	if id == 0:
-		addToConsoleLog(0, String('Command not found: ' + exception))
+		addToConsoleLog(0, String(translate["ERROR"]["null"][global.current_lang] + exception))
 	else:
-		addToConsoleLog(0, String('Syntax error: ' + exception))
+		addToConsoleLog(0, String(translate["ERROR"]["syntax"][global.current_lang] + exception))
 
 # Adds the introduced command to historyIndex array.
 func addToHistory(command):
@@ -186,7 +181,7 @@ func printDate():
 
 
 func showHelp():
-	addToConsoleLog(0, load_file('res://media/txt/help.txt'))
+	addToConsoleLog(0, global.get_file_lang("res://media/json/langs/terminal/help.json"))
 
 
 func printHistory():

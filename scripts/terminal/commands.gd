@@ -23,8 +23,11 @@ func cat(syntax):
 						var route
 						
 						if '.txt' in file:
-							route = String('res://media/txt/' + file)
-						elif '.css' in file:
+							file.erase(file.length() - 4, 4)
+							route = String('res://media/json/langs/terminal/' + file + '.json')
+							main.addToConsoleLog(0, global.get_file_lang(route))
+							return
+						elif ".css" in file:
 							file.erase(file.length() - 4, 4)
 						else:
 							file.erase(file.length() - 5, 5)
@@ -32,19 +35,20 @@ func cat(syntax):
 						if route == null:
 							route = String('res://media/txt/' + file + '.txt')
 						
-						main.addToConsoleLog(0, main.load_file(route))
+						main.addToConsoleLog(0, global.load_file(route))
 						return
 					
 					else:
-						main.addToConsoleLog(0, 'cat: Unsupported file type')
+						main.addToConsoleLog(0, main.translate["EXCEPTION"]["cat"]["type"][global.current_lang])
 						return
 			
-			main.addToConsoleLog(0, String('cat: File ' + file + ' not found'))
+			var arr = main.translate["EXCEPTION"]["cat"]["null"][global.current_lang].split("/", true, 1)
+			main.addToConsoleLog(0, String(arr[0] + file + arr[1]))
 		
 		else:
-			main.addToConsoleLog(0, 'cat: Current directory is empty')
+			main.addToConsoleLog(0, main.translate["EXCEPTION"]["cat"]["empty"][global.current_lang])
 	else:
-		main.exceptionOccur(1, String('>cat [file]'))
+		main.exceptionOccur(1, String('>cat' + main.translate["COMMAND"]["cat"][global.current_lang]))
 
 
 func cd(syntax):
@@ -62,7 +66,7 @@ func cd(syntax):
 					var parentDir = getDirParent(main.currentDir)
 					changeDirectory(parentDir)
 			else:
-				main.addToConsoleLog(0, 'cd: You are already in the root directory')
+				main.addToConsoleLog(0, main.translate["EXCEPTION"]["cd"]["already"][global.current_lang])
 		
 		elif dir != '':
 			var dirValidate = dirExists(dir)
@@ -73,9 +77,10 @@ func cd(syntax):
 				if dirLocation == dirValidate.location:
 					changeDirectory(dirValidate)
 				else:
-					main.addToConsoleLog(0, String('cd: Directory ' + dir + ' not found'))
+					var arr = main.translate["EXCEPTION"]["cd"]["null"][global.current_lang].split("/", true, 1)
+					main.addToConsoleLog(0, String(arr[0] + dir + arr[1]))
 	else:
-		main.exceptionOccur(1, String('>cd [directory]'))
+		main.exceptionOccur(1, String('>cd' + main.translate["COMMAND"]["cd"][global.current_lang]))
 
 func getDirParent(dir):
 	var parentIndex = dir.index - 1
@@ -87,15 +92,16 @@ func getDirParent(dir):
 
 func dirExists(dir):
 	if dir == main.currentDir.location:
-		main.addToConsoleLog(0, String('Currently in ' + dir))
+		main.addToConsoleLog(0, String(main.translate["EXCEPTION"]["cd"]["current"][global.current_lang] + dir))
 	elif dir[0] == '/':
 		for i in main.tree:
 			if dir in i.location:
 				return i
 		
-		main.addToConsoleLog(0, String('cd: Directory ' + dir + ' not found'))
+		var arr = main.translate["EXCEPTION"]["cd"]["null"][global.current_lang].split("/", true, 1)
+		main.addToConsoleLog(0, String(arr[0] + dir + arr[1]))
 	else:
-		main.exceptionOccur(1, String('cd: Maybe you meant -> /' + dir.replace('/', '')))
+		main.exceptionOccur(1, String(main.translate["EXCEPTION"]["cd"]["syntax"][global.current_lang] + dir.replace('/', '')))
 
 func changeDirectory(dir):
 	main.currentDir = dir
@@ -108,13 +114,13 @@ func man(syntax):
 			
 			for i in range(0, param.size()):
 				if option == param[i]:
-					var route = String('res://media/txt/desc/' + option + '.txt')
-					main.addToConsoleLog(0, main.load_file(route))
+					var route = String('res://media/json/langs/terminal/desc/' + option + '.json')
+					main.addToConsoleLog(0, global.get_file_lang(route))
 					return
 					
-			main.addToConsoleLog(0, String('man: ' + option.replace("man", "") + ': Nonexistent option'))
+			main.addToConsoleLog(0, String('man: ' + option.replace("man", "") + main.translate["EXCEPTION"]["man"]["null"][global.current_lang]))
 	else:
-		main.exceptionOccur(1, String('>man [command]'))
+		main.exceptionOccur(1, String('>man' + main.translate["COMMAND"]["man"][global.current_lang]))
 
 
 func run(syntax):
@@ -129,12 +135,13 @@ func run(syntax):
 						return
 					
 					else:
-						main.addToConsoleLog(0, 'run: Unsupported file type')
+						main.addToConsoleLog(0, main.translate["EXCEPTION"]["run"]["type"][global.current_lang])
 						return
 			
-			main.addToConsoleLog(0, String('run: File ' + file + ' not found'))
+			var arr = main.translate["EXCEPTION"]["run"]["null"][global.current_lang].split("/", true, 1)
+			main.addToConsoleLog(0, String(arr[0] + file + arr[1]))
 		
 		else:
-			main.addToConsoleLog(0, 'run: Current directory is empty')
+			main.addToConsoleLog(0, main.translate["EXCEPTION"]["run"]["empty"][global.current_lang])
 	else:
-		main.exceptionOccur(1, String('>run [file]'))
+		main.exceptionOccur(1, String('>run' + main.translate["COMMAND"]["run"][global.current_lang]))

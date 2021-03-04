@@ -1,0 +1,13 @@
+{
+  "en": {
+    "content": "------------------------------------------------------------------------\r\n[center]List content[/center]\r\n------------------------------------------------------------------------\r\nThe command line directive ls stands for list and is used to\r\ndisplay the content of a directory (the names of all files and\r\nfolders or directories found in the given directory).\r\n------------------------------------------------------------------------\r\nSyntax:\t\t\t\t\tls\r\n\r\nExample of use:\t\t\tls\r\n------------------------------------------------------------------------"
+  },
+
+  "es": {
+    "content": "------------------------------------------------------------------------\r\n[center]Listar contenido[/center]\r\n------------------------------------------------------------------------\r\nLa directiva de línea de comandos ls significa lista y se utiliza para\r\nmostrar el contenido de un directorio (los nombres de todos los archivos\r\ny carpetas o directorios encontrados en el directorio dado).\r\n------------------------------------------------------------------------\r\nSintaxis:\t\t\t\t\tls\r\n\r\nEjemplo de uso:\t\t\t  ls\r\n------------------------------------------------------------------------"
+  },
+
+  "eo": {
+    "content": "------------------------------------------------------------------------\r\n[center]Listigi enhavon[/center]\r\n------------------------------------------------------------------------\r\nLa komandlinia direktivo ls signifas liston kaj kutimis montri la\r\nenhavon de dosierujo (la nomoj de ĉiuj dosieroj kaj dosierujoj aŭ\r\ndosierujoj trovitaj en la donita dosierujo).\r\n------------------------------------------------------------------------\r\nSintakso:\t\t\t\t\tls\r\n\r\nUzokutimo:\t\t\t       ls\r\n------------------------------------------------------------------------"
+  }
+}

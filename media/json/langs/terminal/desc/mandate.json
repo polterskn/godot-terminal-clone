@@ -1,0 +1,13 @@
+{
+  "en": {
+    "content": "------------------------------------------------------------------------\r\n[center]Daytime[/center]\r\n------------------------------------------------------------------------\r\nRetrieves system time.\r\nThe command date outputs the system time including the date.\r\n------------------------------------------------------------------------\r\nSyntax:\t\t\t\t\tdate\r\n\r\nExample of use:\t\t\tdate\r\n------------------------------------------------------------------------"
+  },
+
+  "es": {
+    "content": "------------------------------------------------------------------------\r\n[center]Hora del día[/center]\r\n------------------------------------------------------------------------\r\nObtiene la hora del sistema.\r\nEl comando date muestra la hora del sistema incluyendo la fecha.\r\n------------------------------------------------------------------------\r\nSintaxis:\t\t\t\t\tdate\r\n\r\nEjemplo de uso:\t\t\t  date\r\n------------------------------------------------------------------------"
+  },
+
+  "eo": {
+    "content": "------------------------------------------------------------------------\r\n[center]Tempo de la tago[/center]\r\n------------------------------------------------------------------------\r\nAkiras la sisteman tempon.\r\nLa date-komando montras la sisteman horon inkluzive la daton.\r\n------------------------------------------------------------------------\r\nSintakso:\t\t\t\t\tdate\r\n\r\nUzokutimo:\t\t\t       date\r\n------------------------------------------------------------------------"
+  }
+}

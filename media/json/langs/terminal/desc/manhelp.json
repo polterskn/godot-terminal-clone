@@ -1,0 +1,13 @@
+{
+  "en": {
+    "content": "------------------------------------------------------------------------\r\n[center]Help[/center]\r\n------------------------------------------------------------------------\r\nUse the help command to see a list of all integrated shell\r\ncommands (built-in commands).\r\n------------------------------------------------------------------------\r\nSyntax:\t\t\t\t\thelp\r\n\r\nExample of use:\t\t\thelp\r\n------------------------------------------------------------------------"
+  },
+
+  "es": {
+    "content": "------------------------------------------------------------------------\r\n[center]Ayuda[/center]\r\n------------------------------------------------------------------------\r\nUtilice el comando help para ver una lista de todos los comandos\r\nintegrados del shell (comandos integrados).\r\n------------------------------------------------------------------------\r\nSintaxis:\t\t\t\t\thelp\r\n\r\nEjemplo de uso:\t\t\t  help\r\n------------------------------------------------------------------------"
+  },
+
+  "eo": {
+    "content": "------------------------------------------------------------------------\r\n[center]Helpu[/center]\r\n------------------------------------------------------------------------\r\nUzu la help komandon por vidi liston de ĉiuj komandoj enkonstruita ŝelo\r\n(enkonstruitaj komandoj).\r\n------------------------------------------------------------------------\r\nSintakso:\t\t\t\t\thelp\r\n\r\nUzokutimo:\t\t\t       help\r\n------------------------------------------------------------------------"
+  }
+}

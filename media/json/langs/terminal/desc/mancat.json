@@ -1,0 +1,13 @@
+{
+  "en": {
+    "content": "------------------------------------------------------------------------\r\n[center]File content[/center]\r\n------------------------------------------------------------------------\r\nThe command line program cat (short for concatenate) was developed as a\r\ntool for the combination of file content and can be used as a pager for\r\nthe display of file content in the terminal. It can display the content\r\nof every type of file except .sh files\r\n-----------------------------------------------------------------------\r\nSyntax:\t\t\t\t\tcat [file]\r\n\r\nExample of use:\t\t\tcat names.txt\r\n-----------------------------------------------------------------------"
+  },
+
+  "es": {
+    "content": "------------------------------------------------------------------------\r\n[center]Contenido del archivo[/center]\r\n------------------------------------------------------------------------\r\nEl programa de línea de comandos cat (abreviatura de concatenar) fue\r\ndesarrollado como una herramienta para la combinación del contenido de\r\nlos archivos y puede ser utilizado como un localizador para la\r\nvisualización del contenido del archivo en la terminal. Puede mostrar\r\nel contenido de cualquier tipo de archivo excepto los archivos .sh\r\n-----------------------------------------------------------------------\r\nSintaxis:\t\t\t\t\tcat [archivo]\r\n\r\nEjemplo de uso:\t\t\t  cat nombres.txt\r\n-----------------------------------------------------------------------"
+  },
+
+  "eo": {
+    "content": "------------------------------------------------------------------------\r\n[center]Dosiera enhavo[/center]\r\n------------------------------------------------------------------------\r\nLa komandlinia programo cat (mallonga por interligi en la angla) estis\r\ndisvolvita kiel ilo por kombini la enhavon de dosieroj kajuzeblas kiel\r\nlokalizilo por la montrado de dosierenhavo en terminalo. Povas montri\r\nla enhavo de iu ajn dosiera tipo krom .sh-dosieroj\r\n-----------------------------------------------------------------------\r\nSintakso:\t\t\t\t\tcat [dosiero]\r\n\r\nUzokutimo:\t\t\t       cat nomoj.txt\r\n-----------------------------------------------------------------------"
+  }
+}

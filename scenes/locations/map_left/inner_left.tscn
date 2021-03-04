@@ -1,11 +1,13 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/entities/player/player_controller.tscn" type="PackedScene" id=1]
 [ext_resource path="res://media/png/locations/map_left/inner_left/inner_left_night.png" type="Texture" id=2]
 [ext_resource path="res://media/png/locations/map_left/inner_left/tiles/0.png" type="Texture" id=3]
 [ext_resource path="res://media/png/locations/map_left/inner_left/tiles/1.png" type="Texture" id=4]
+[ext_resource path="res://scripts/scenes/locations/map_left/inner_left.gd" type="Script" id=5]
 
 [node name="inner_left" type="Node2D"]
+script = ExtResource( 5 )
 
 [node name="bg" type="Node2D" parent="."]
 
@@ -30,6 +32,14 @@ polygon = PoolVector2Array( 0, 744, 0, 1080, 1920, 1080, 1920, 728, 1928, 728, 1
 [node name="c" type="CollisionPolygon2D" parent="bounds/in"]
 build_mode = 1
 polygon = PoolVector2Array( 0, 776, 743.675, 686.842, 967.326, 685.301, 1061.57, 675.193, 1061.47, 724.723, 1920, 752, 1920, 728, 1088, 704, 1085.5, 648.5, 966.561, 659.887, 741.665, 661.777, 0, 744 )
+
+[node name="exit" type="Node2D" parent="."]
+
+[node name="0" type="Area2D" parent="exit"]
+
+[node name="c" type="CollisionPolygon2D" parent="exit/0"]
+build_mode = 1
+polygon = PoolVector2Array( 0, 1080, 1920, 1080, 1920, 744, 1904, 744, 1904, 1064, 16, 1064, 16, 768, 0, 768 )
 
 [node name="sort" type="YSort" parent="."]
 
@@ -59,3 +69,4 @@ polygon = PoolVector2Array( 1920, 838.203, 1919.99, 845.32, 1766.4, 839.887, 176
 
 [node name="Body" parent="sort" instance=ExtResource( 1 )]
 position = Vector2( 1025.56, 995.895 )
+[connection signal="body_entered" from="exit/0" to="." method="_on_0_body_entered"]

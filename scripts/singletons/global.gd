@@ -18,6 +18,19 @@ func jsonify(file):
 	return result
 
 
+func get_file_lang(file):
+	var media = jsonify(file)
+	return media[current_lang]["content"]
+
+# Gets txt files and returns their content as string.
+func load_file(file):
+	var f = File.new()
+	f.open(file, File.READ)
+	var data = f.get_as_text()
+	f.close()
+	return data
+
+
 func get_language():
 	var lang = OS.get_locale()
 	
@@ -29,3 +42,7 @@ func get_language():
 		lang = LANGS[0]
 	
 	return lang
+
+
+func change_scene(path):
+	assert(get_tree().change_scene(path) == OK)

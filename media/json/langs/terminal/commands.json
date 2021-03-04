@@ -1,0 +1,157 @@
+{
+  "MONTHS": {
+    "en": [
+      "",
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December"
+    ],
+    "es": [
+      "",
+      "Enero",
+      "Febrero",
+      "Marzo",
+      "Abril",
+      "Mayo",
+      "Junio",
+      "Julio",
+      "Augosto",
+      "Septiembre",
+      "Octubre",
+      "Noviembre",
+      "Diciembre"
+    ],
+    "eo": [
+      "",
+      "Januaro",
+      "Februaro",
+      "Marto",
+      "Aprilo",
+      "Majo",
+      "Junio",
+      "Julio",
+      "Aŭgusto",
+      "Septembro",
+      "Oktobro",
+      "Novembro",
+      "Decembro"
+    ]
+  },
+
+  "EXCEPTION": {
+    "man": {
+      "null": {
+        "en": ": Nonexistent option",
+        "es": ": Opción inexistente",
+        "eo": ": Neekzistanta opcio"
+      }
+    },
+    "cat": {
+      "type": {
+        "en": "cat: Unsupported file type",
+        "es": "cat: Tipo de archivo no soportado",
+        "eo": "cat: Ne subtenata dosiertipo"
+      },
+      "null": {
+        "en": "cat: File / not found",
+        "es": "cat: Archivo / no encontrado",
+        "eo": "cat: Dosiero / ne trovita"
+      },
+      "empty": {
+        "en": "cat: Current directory is empty",
+        "es": "cat: El directorio actual está vacío",
+        "eo": "cat: La aktuala dosierujo estas malplena"
+      }
+    },
+    "cd": {
+      "already": {
+        "en": "cd: You are already in the root directory",
+        "es": "cd: Ya estás en el directorio raíz",
+        "eo": "cd: Vi jam estas en la radika dosierujo"
+      },
+      "null": {
+        "en": "cd: Directory / not found",
+        "es": "cd: Directorio / no encontrado",
+        "eo": "cd: Dosierujo / ne trovita"
+      },
+      "current": {
+        "en": "cd: Currently in ",
+        "es": "cd: Actualmente en ",
+        "eo": "cd: Nuntempe en "
+      },
+      "syntax": {
+        "en": "cd: Maybe you meant -> /",
+        "es": "cd: Tal vez quisiste decir -> /",
+        "eo": "cd: Eble vi volis diri -> /"
+      }
+    },
+    "run": {
+      "type": {
+        "en": "run: Unsupported file type",
+        "es": "run: Tipo de archivo no soportado",
+        "eo": "run: Ne subtenata dosiertipo"
+      },
+      "null": {
+        "en": "run: File / not found",
+        "es": "run: Archivo / no encontrado",
+        "eo": "run: Dosiero / ne trovita"
+      },
+      "empty": {
+        "en": "run: Current directory is empty",
+        "es": "run: El directorio actual está vacío",
+        "eo": "run: La aktuala dosierujo estas malplena"
+      }
+    }
+  },
+
+  "COMMAND": {
+    "man": {
+      "en": " [command]",
+      "es": " [comando]",
+      "eo": " [komando]"
+    },
+    "cat": {
+      "en": " [file]",
+      "es": " [archivo]",
+      "eo": " [dosiero]"
+    },
+    "cd": {
+      "en": " [directory]",
+      "es": " [directorio]",
+      "eo": " [dosierujo]"
+    },
+    "run": {
+      "en": " [file]",
+      "es": " [archivo]",
+      "eo": " [dosiero]"
+    }
+  },
+
+  "ERROR": {
+    "null": {
+      "en": "Command not found: ",
+      "es": "Comando no encontrado: ",
+      "eo": "Komando ne trovita: "
+    },
+    "syntax": {
+      "en": "Syntax error: ",
+      "es": "Error de sintaxis: ",
+      "eo": "Sintaksa eraro: "
+    }
+  },
+
+  "HOLDER": {
+    "en": "[Waiting for input]",
+    "es": "[Esperando entrada]",
+    "eo": "[Atendante eniron]"
+  }
+}

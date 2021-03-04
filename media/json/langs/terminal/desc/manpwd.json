@@ -1,0 +1,13 @@
+{
+  "en": {
+    "content": "------------------------------------------------------------------------\r\n[center]Working directory[/center]\r\n------------------------------------------------------------------------\r\nUse pwd (short for print working directory) to output the name\r\nof the current working directory.\r\n------------------------------------------------------------------------\r\nSyntax:\t\t\t\t\tpwd\r\n\r\nExample of use:\t\t\tpwd\r\n------------------------------------------------------------------------"
+  },
+
+  "es": {
+    "content": "------------------------------------------------------------------------\r\n[center]Directorio de trabajo[/center]\r\n------------------------------------------------------------------------\r\nUtilice pwd (abreviatura de print working directory) para obtener el\r\nnombre del directorio de trabajo actual.\r\n------------------------------------------------------------------------\r\nSintaxis:\t\t\t\t\tpwd\r\n\r\nEjemplo de uso:\t\t\t  pwd\r\n------------------------------------------------------------------------"
+  },
+
+  "eo": {
+    "content": "------------------------------------------------------------------------\r\n[center]Laboranta dosierujo[/center]\r\n------------------------------------------------------------------------\r\nUzu pwd (mallongigo por print working directory) por akiri la\r\nnomo de la nuna labordosierujo.\r\n------------------------------------------------------------------------\r\nSintakso:\t\t\t\t\tpwd\r\n\r\nUzokutimo:\t\t\t       pwd\r\n------------------------------------------------------------------------"
+  }
+}
