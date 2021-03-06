@@ -1,13 +1,13 @@
 {
   "en": {
-    "content": "Welcome back {\r\n\tERROR: _getUserName(): \"${user.name}\" is not defined.\r\n  \tAt: editor/scene_tree_editor.cpp:768\r\n\t}.\r\nType 'help' to see a list of shell available commands and\r\nretrieve a short description of the commands in question."
+    "content": "Welcome back {\r\n\tERROR: _getUserName(): \"username[UNLEN+1]\" username is not defined.\r\n  \tAt: components/OS_property_getter.cpp:768\r\n\t}.\r\nType 'help' to see a list of shell available commands and\r\nretrieve a short description of the commands in question."
   },
 
   "es": {
-    "content": "Bienvenido de nuevo {\r\n\tERROR: _getUserName(): \"${user.name}\" is not defined.\r\n  \tAt: editor/scene_tree_editor.cpp:768\r\n\t}.\r\nEscriba 'help' para ver una lista de los comandos disponibles del shell\r\ny obtener una breve descripción de los comandos en cuestión."
+    "content": "Bienvenido de nuevo {\r\n\tERROR: _getUserName(): \"username[UNLEN+1]\" username is not defined.\r\n  \tAt: components/OS_property_getter.cpp:768\r\n\t}.\r\nEscriba 'help' para ver una lista de los comandos disponibles del shell\r\ny obtener una breve descripción de los comandos en cuestión."
   },
 
   "eo": {
-    "content": "Bonvenon ree {\r\n\tERROR: _getUserName(): \"${user.name}\" is not defined.\r\n  \tAt: editor/scene_tree_editor.cpp:768\r\n\t}.\r\nTajpu 'help' por vidi liston de disponeblaj ŝelaj komandoj\r\nkaj mallongan priskribon de la koncernaj komandoj."
+    "content": "Bonvenon ree {\r\n\tERROR: _getUserName(): \"username[UNLEN+1]\" username is not defined.\r\n  \tAt: components/OS_property_getter.cpp:768\r\n\t}.\r\nTajpu 'help' por vidi liston de disponeblaj ŝelaj komandoj\r\nkaj mallongan priskribon de la koncernaj komandoj."
   }
 }

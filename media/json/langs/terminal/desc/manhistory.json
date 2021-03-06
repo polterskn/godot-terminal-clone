@@ -1,13 +1,13 @@
 {
   "en": {
-    "content": "------------------------------------------------------------------------\r\n[center]History[/center]\r\n------------------------------------------------------------------------\r\nThis command serves as entry assistance, and allows you to look\r\nthrough the list of previous commands.\r\n------------------------------------------------------------------------\r\nSyntax:\t\t\t\t\thistory\r\n\r\nExample of use:\t\t\thistory\r\n------------------------------------------------------------------------"
+    "content": "------------------------------------------------------------------------\n[center]History[/center]\r\n------------------------------------------------------------------------\nThis command serves as entry assistance, and allows you to look\r\nthrough the list of previous commands.\r\n------------------------------------------------------------------------\nSyntax:\t\t\t\t\thistory\r\n\r\nExample of use:\t\t\thistory\r\n------------------------------------------------------------------------"
   },
 
   "es": {
-    "content": "------------------------------------------------------------------------\r\n[center]Historial[/center]\r\n------------------------------------------------------------------------\r\nEste comando sirve como ayuda de entrada, le permite mirar\r\nla lista de comandos previamente ingresados.\r\n------------------------------------------------------------------------\r\nSintaxis:\t\t\t\t\thistory\r\n\r\nEjemplo de uso:\t\t\t  history\r\n------------------------------------------------------------------------"
+    "content": "------------------------------------------------------------------------\n[center]Historial[/center]\r\n------------------------------------------------------------------------\nEste comando sirve como ayuda de entrada, le permite mirar\r\nla lista de comandos previamente ingresados.\r\n------------------------------------------------------------------------\nSintaxis:\t\t\t\t\thistory\r\n\r\nEjemplo de uso:\t\t\t  history\r\n------------------------------------------------------------------------"
   },
 
   "eo": {
-    "content": "------------------------------------------------------------------------\r\n[center]Rekordo[/center]\r\n------------------------------------------------------------------------\r\nĈi tiu komando funkcias kiel eniga helpilo, permesas vin rigardi\r\nla listo de antaŭe enigitaj komandoj.\r\n------------------------------------------------------------------------\r\nSintakso:\t\t\t\t\thistory\r\n\r\nUzokutimo:\t\t\t       history\r\n------------------------------------------------------------------------"
+    "content": "------------------------------------------------------------------------\n[center]Rekordo[/center]\r\n------------------------------------------------------------------------\nĈi tiu komando funkcias kiel eniga helpilo, permesas vin rigardi\r\nla listo de antaŭe enigitaj komandoj.\r\n------------------------------------------------------------------------\nSintakso:\t\t\t\t\thistory\r\n\r\nUzokutimo:\t\t\t       history\r\n------------------------------------------------------------------------"
   }
 }

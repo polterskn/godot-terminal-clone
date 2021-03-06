@@ -5,8 +5,8 @@ onready var base_size = Vector2(1920, 1080)
 
 
 func _ready():
-	#setFullscreen()
-	setWindowed()
+	setFullscreen()
+	#setWindowed()
 
 
 func setFullscreen():

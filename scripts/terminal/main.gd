@@ -74,7 +74,7 @@ func initTerminal():
 	var br = '\n\n'
 	var initialText = []
 	
-	initialText.insert(0, transformDate() + br)
+	initialText.insert(0, transformDate() + '\n')
 	initialText.insert(1, global.load_file('res://media/txt/greet.txt') + br)
 	initialText.insert(2, '©' + String(OS.get_datetime().year) + ' by Ne Solutions' + br)
 	initialText.insert(3, global.get_file_lang('res://media/json/langs/terminal/intro.json'))

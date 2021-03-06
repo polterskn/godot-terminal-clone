@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://media/png/locations/map_left/main_left/bg_night.png" type="Texture" id=1]
+[ext_resource path="res://media/png/locations/map_left/main_left/main_left_night.png" type="Texture" id=1]
 [ext_resource path="res://media/png/locations/map_left/main_left/tiles/4.png" type="Texture" id=2]
 [ext_resource path="res://media/png/locations/map_left/main_left/tiles/0.png" type="Texture" id=3]
 [ext_resource path="res://media/png/locations/map_left/main_left/tiles/1.png" type="Texture" id=4]
