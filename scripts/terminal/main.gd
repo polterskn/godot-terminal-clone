@@ -74,16 +74,20 @@ func initTerminal():
 	var br = '\n\n'
 	var initialText = []
 	
-	initialText.insert(0, transformDate() + '\n')
-	initialText.insert(1, global.load_file('res://media/txt/greet.txt') + br)
-	initialText.insert(2, '©' + String(OS.get_datetime().year) + ' by Ne Solutions' + br)
-	initialText.insert(3, global.get_file_lang('res://media/json/langs/terminal/intro.json'))
+	initialText.insert(0, global.load_file('res://media/txt/greet.txt') + br)
+	initialText.insert(1, '©' + String(OS.get_datetime().year) + ' by Ne Solutions' + br)
+	initialText.insert(2, global.get_file_lang('res://media/json/langs/terminal/intro.json'))
+	
+	global.play_sound(preload("res://media/ogg/terminal/boot.ogg"), 'sfx')
+	yield(get_tree().create_timer(1), "timeout")
+	addToConsoleLog(2, transformDate() + '\n')
+	yield(get_tree().create_timer(5), "timeout")
+	global.play_sound(preload("res://media/ogg/terminal/fans.ogg"), 'bgm')
 	
 	for i in initialText:
 		consoleLog.bbcode_text += i
 	
-	consoleLog.scroll_following = false
-	printLog(initialText, 2) #8
+	printLog(initialText, 4)
 	addToConsoleLog(2, currentDir.location, br)
 
 # Gets datetime from OS and returns the full date as string.
@@ -201,7 +205,6 @@ func printCurrentDir():
 # Signals.
 func _on_anim_tween_completed(_object, _key):
 	finished = true
-	consoleLog.scroll_following = true
 
 
 func _on_console__input_text_entered(new_text):
@@ -209,3 +212,8 @@ func _on_console__input_text_entered(new_text):
 		addToConsoleLog(1, new_text, '\n\n')
 		validateCommand(new_text)
 		addToHistory(new_text)
+		global.play_sound(preload("res://media/ogg/terminal/beep.ogg"), 'sfx')
+
+
+func _on_console__input_text_changed(_new_text):
+	global.play_sound(preload("res://media/ogg/terminal/keys.ogg"), 'sfx')

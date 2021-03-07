@@ -4,9 +4,32 @@ const LANGS = ["en", "es", "eo"]
 
 var current_lang
 
+var sfx = AudioStreamPlayer.new()
+var bgm = AudioStreamPlayer.new()
+
 
 func _ready():
 	current_lang = get_language()
+	init_sound()
+
+
+func init_sound():
+	self.add_child(sfx)
+	self.add_child(bgm)
+	sfx.bus = 'sfx'
+	bgm.bus = 'bgm'
+
+
+func play_sound(file, bus):
+	match bus:
+		'sfx':
+			global.sfx.stream = file
+			global.sfx.stream.loop = false
+			global.sfx.play()
+		'bgm':
+			global.bgm.stream = file
+			global.bgm.stream.loop = true
+			global.bgm.play()
 
 
 func jsonify(file):
