@@ -6,6 +6,8 @@ var current_lang
 
 var sfx = AudioStreamPlayer.new()
 var bgm = AudioStreamPlayer.new()
+var sfx_volume = 0
+var bgm_volume = 0
 
 
 func _ready():
@@ -30,6 +32,14 @@ func play_sound(file, bus):
 			global.bgm.stream = file
 			global.bgm.stream.loop = true
 			global.bgm.play()
+
+
+func change_volume(value, bus):
+	AudioServer.set_bus_volume_db(bus, lerp(AudioServer.get_bus_volume_db(bus), value, 0.5))
+	if value == -24:
+		AudioServer.set_bus_mute(bus, true)
+	else:
+		AudioServer.set_bus_mute(bus, false)
 
 
 func jsonify(file):

@@ -3,14 +3,17 @@ extends Node
 onready var vp = get_tree().get_root()
 onready var base_size = Vector2(1920, 1080)
 
+var current_mode
+
 
 func _ready():
-	setFullscreen()
-	#setWindowed()
+	set_fullscreen()
 
 
-func setFullscreen():
+func set_fullscreen():
 	var window_size = OS.get_screen_size()
+	
+	current_mode = 0
 	
 	if OS.get_name() == 'Windows' && window_size == base_size:
 				# Not sure if this works outside of Windows / native resolution.
@@ -31,8 +34,11 @@ func setFullscreen():
 		vp.set_attach_to_screen_rect(screen_rect)
 
 
-func setWindowed():
+func set_windowed():
 	var window_size = OS.get_screen_size()
+	
+	current_mode = 1
+	
 		# Sets the windowed version to an arbitrary 80% of screen size here
 	var scale = min(window_size.x / base_size.x, window_size.y / base_size.y) * 0.8
 	var scaled_size = (base_size * scale).round()

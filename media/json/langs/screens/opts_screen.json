@@ -1,0 +1,37 @@
+{
+  "en": {
+    "content": {
+      "title": "Options",
+      "lang": "Language",
+      "scr": "Resolution",
+      "scr-mode": ["Full screen", "Windowed"],
+      "sound": "Sound",
+      "sfx": "Sound effects volume",
+      "bgm": "Music volume"
+    }
+  },
+
+  "es": {
+    "content": {
+      "title": "Opciones",
+      "lang": "Idioma",
+      "scr": "Resolución",
+      "scr-mode": ["Pantalla completa", "Ventana"],
+      "sound": "Sonido",
+      "sfx": "Volumen de los efectos de sonido",
+      "bgm": "Volumen de la música"
+    }
+  },
+
+  "eo": {
+    "content": {
+      "title": "Opcioj",
+      "lang": "Lingvo",
+      "scr": "Rezolucio",
+      "scr-mode": ["Plenekrane", "Fenestrita"],
+      "sound": "Sono",
+      "sfx": "Sonefikaj volumo",
+      "bgm": "Muzika volumo"
+    }
+  }
+}

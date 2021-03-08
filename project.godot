@@ -21,6 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Marked for carnage"
+run/main_scene="res://scenes/screens/title_screen.tscn"
 config/icon="res://icon.png"
 
 [autoload]

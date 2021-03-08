@@ -1,0 +1,25 @@
+{
+  "en": {
+    "content": {
+      "begin": "Begin",
+      "opts": "Options",
+      "quit": "Quit"
+    }
+  },
+
+  "es": {
+    "content": {
+      "begin": "Comenzar",
+      "opts": "Opciones",
+      "quit": "Salir"
+    }
+  },
+
+  "eo": {
+    "content": {
+      "begin": "Komencu",
+      "opts": "Opcioj",
+      "quit": "Lasu"
+    }
+  }
+}
